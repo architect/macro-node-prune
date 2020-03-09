@@ -1,0 +1,42 @@
+{
+  "name": "@architect/arc-macro-node-prune",
+  "version": "0.0.1",
+  "description": "Architect serverless framework macro that cleans node_modules cruft from your cloud functions during deployment",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint . --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/architect-examples/arc-macro-node-prune.git"
+  },
+  "author": "Ryan Block",
+  "license": "Apache-2.0",
+  "homepage": "https://arc.codes",
+  "engines": {
+    "node": ">=10.0.0"
+  },
+  "dependencies": {
+    "@architect/utils": "~1.4.7"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0"
+  },
+  "keywords": [
+    "amazon",
+    "api gateway",
+    "arc",
+    "architect",
+    "aws",
+    "ci",
+    "cloud functions",
+    "cloud",
+    "deployment",
+    "lambda",
+    "macro",
+    "node_modules",
+    "npm",
+    "plugin",
+    "serverless"
+  ]
+}

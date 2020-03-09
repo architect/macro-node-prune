@@ -1,0 +1,9 @@
+.DS_Store
+.eslintignore
+.eslintrc.js
+.gitattributes
+.github
+.travis.yml
+changelog.md
+contributing.md
+test/
