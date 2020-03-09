@@ -1,6 +1,6 @@
 {
   "name": "@architect/arc-macro-node-prune",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Architect serverless framework macro that cleans node_modules cruft from your cloud functions during deployment",
   "main": "index.js",
   "scripts": {
