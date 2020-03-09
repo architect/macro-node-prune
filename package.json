@@ -4,7 +4,8 @@
   "description": "Architect serverless framework macro that cleans node_modules cruft from your cloud functions during deployment",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint . --fix"
+    "lint": "eslint . --fix",
+    "test": "npm run lint"
   },
   "repository": {
     "type": "git",
