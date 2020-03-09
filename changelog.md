@@ -6,7 +6,7 @@
 
 ### Added
 
-- Architect node-prune is now a v6-compatible macro, ported from the now-deprecated [v5-compatible plugin](https://github.com/architect-examples/arc-plugin-node-prune)
+- Architect node-prune is now a v6-compatible macro, ported from the now-deprecated [v5-compatible plugin](https://github.com/architect/arc-plugin-node-prune)
 - Improved file counting and formatting of output along the way
 
 ---

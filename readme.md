@@ -9,7 +9,7 @@
 
 Pruning your `node_modules` tree(s) has some inherent risks. While we have found it to be stable and reliable, the packages your project uses may provide different results.
 
-For example: while unlikely, a package that includes and makes use of a file with a commonly `.npmignore`d filename may be impacted by this pruner. For a list of files and folders that are pruned, please [review the pruner script source](https://github.com/architect-examples/arc-macro-node-prune/blob/master/prune.sh).
+For example: while unlikely, a package that includes and makes use of a file with a commonly `.npmignore`d filename may be impacted by this pruner. For a list of files and folders that are pruned, please [review the pruner script source](https://github.com/architect/arc-macro-node-prune/blob/master/prune.sh).
 
 
 ## Installation
