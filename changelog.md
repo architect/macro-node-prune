@@ -2,6 +2,14 @@
 
 ---
 
+## [1.0.1] 2020-03-28
+
+### Fixed
+
+- Fixes issue where pruner may be passed an project with functions that do not (yet) exist on the filesystem (potentially due to default `get /`, or other possible mutations by other macros)
+
+---
+
 ## [1.0.0] 2020-03-08
 
 ### Added
