@@ -6,7 +6,7 @@ let path = require('path')
  * Add to your Architect project manifest file:
  *
  * @macros
- * architect/arc-macro-node-prune
+ * architect/macro-node-prune
  *
  * That's it, zero config!
  */
@@ -22,7 +22,7 @@ module.exports = async function pruner (arc, cloudformation) {
     pathToCode = pathToCode.startsWith(cwd)
       ? pathToCode
       : path.join(cwd, pathToCode)
-    let cmd = path.join(cwd, 'node_modules', '@architect', 'arc-macro-node-prune', 'prune.sh')
+    let cmd = path.join(cwd, 'node_modules', '@architect', 'macro-node-prune', 'prune.sh')
     let options = {cwd: pathToCode, shell: true}
     let spawn = child(cmd, [], options)
     if (!quiet) {

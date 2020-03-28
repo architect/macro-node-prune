@@ -1,5 +1,5 @@
 {
-  "name": "@architect/arc-macro-node-prune",
+  "name": "@architect/macro-node-prune",
   "version": "1.0.0",
   "description": "Architect serverless framework macro that cleans node_modules cruft from your cloud functions during deployment",
   "main": "index.js",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/architect/arc-macro-node-prune.git"
+    "url": "https://github.com/architect/macro-node-prune.git"
   },
   "author": "Ryan Block",
   "license": "Apache-2.0",
