@@ -136,7 +136,9 @@ find . -type d -name node_modules -prune -exec find {} -type f \( \
 
 # Common unneeded directories
 find . -type d -name node_modules -prune -exec find {} -type d \( \
+  -name   __mocks__ -o \
   -name   __tests__ -o \
+  -name   __test__ -o \
   -name   .circleci -o \
   -name   .github -o \
   -name   .idea -o \
