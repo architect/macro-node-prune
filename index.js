@@ -1,5 +1,5 @@
-let {inventory, updater} = require('@architect/utils')
-let child = require('child_process').spawnSync
+let { inventory, updater } = require('@architect/utils')
+let { spawnSync: child } = require('child_process')
 let path = require('path')
 let { existsSync } = require('fs')
 
@@ -11,9 +11,9 @@ let { existsSync } = require('fs')
  *
  * That's it, zero config!
  */
-module.exports = async function pruner (arc, cloudformation) {
+module.exports = function pruner (arc, cloudformation) {
 
-  let {localPaths} = inventory(arc)
+  let { localPaths } = inventory(arc)
   let quiet = process.env.ARC_QUIET
   let update = updater('Pruner')
 
@@ -25,14 +25,14 @@ module.exports = async function pruner (arc, cloudformation) {
         ? pathToCode
         : path.join(cwd, pathToCode)
       let cmd = path.join(cwd, 'node_modules', '@architect', 'macro-node-prune', 'prune.sh')
-      let options = {cwd: pathToCode, shell: true}
+      let options = { cwd: pathToCode, shell: true }
       let spawn = child(cmd, [], options)
       let output = spawn.stdout
       if (!quiet && output) {
         // Format response
         output = output.toString().split('\n')
         let fmt = size => {
-          if (size >= 1000) return `${size/1000}MB`
+          if (size >= 1000) return `${size / 1000}MB`
           return `${size}KB`
         }
         let beforeSize = fmt(output[0])
@@ -48,13 +48,13 @@ module.exports = async function pruner (arc, cloudformation) {
           `Pruned ... ${prunedSize} in ${Date.now() - start}ms`,
         ]
         update.status(
-          pathToCode.replace(cwd,''),
+          pathToCode.replace(cwd, ''),
           ...pretty
         )
       }
       if (spawn.status !== 0 || spawn.error) {
         let error = spawn.error ? spawn.error : ''
-        throw(`Prune error, exited ${spawn.status}`, error)
+        throw (`Prune error, exited ${spawn.status}`, error)
       }
     }
   }
