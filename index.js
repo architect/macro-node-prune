@@ -1,6 +1,7 @@
-let { inventory, updater } = require('@architect/utils')
+let { updater } = require('@architect/utils')
+let inventory = require('@architect/inventory')
 let { spawnSync: child } = require('child_process')
-let path = require('path')
+let { join } = require('path')
 let { existsSync } = require('fs')
 
 /**
@@ -11,20 +12,21 @@ let { existsSync } = require('fs')
  *
  * That's it, zero config!
  */
-module.exports = function pruner (arc, cloudformation) {
+module.exports = async function pruner (arc, cloudformation) {
 
-  let { localPaths } = inventory(arc)
+  let { inv } = await inventory({})
+  let { lambdaSrcDirs } = inv
   let quiet = process.env.ARC_QUIET
   let update = updater('Pruner')
 
-  for (let pathToCode of localPaths) {
+  for (let pathToCode of lambdaSrcDirs) {
     if (existsSync(pathToCode)) {
       let start = Date.now()
       let cwd = process.cwd()
       pathToCode = pathToCode.startsWith(cwd)
         ? pathToCode
-        : path.join(cwd, pathToCode)
-      let cmd = path.join(cwd, 'node_modules', '@architect', 'macro-node-prune', 'prune.sh')
+        : join(cwd, pathToCode)
+      let cmd = join(cwd, 'node_modules', '@architect', 'macro-node-prune', 'prune.sh')
       let options = { cwd: pathToCode, shell: true }
       let spawn = child(cmd, [], options)
       let output = spawn.stdout

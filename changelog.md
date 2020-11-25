@@ -2,6 +2,14 @@
 
 ---
 
+## [1.0.3] 2020-11-25
+
+### Changed
+
+- Uses Inventory and Utils 2.0
+
+---
+
 ## [1.0.2] 2020-03-29
 
 ### Added
