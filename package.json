@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "@architect/inventory": "~1.1.0",
-    "@architect/utils": "~2.1.0"
+    "@architect/utils": "~3.0.1"
   },
   "devDependencies": {
     "@architect/eslint-config": "~1.0.0",
